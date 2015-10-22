@@ -3,6 +3,11 @@
 
 // Modules which you authored in this project are intended to be
 // imported through new ES6 syntax.
+require('angular');
+require('angular-animate');
+require('angular-aria');
+require('angular-material');
+
 import { greet } from './hello_world/hello_world';
 
 // Node.js modules and those from npm
@@ -23,3 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('platform-info').innerHTML = os.platform();
     document.getElementById('env-name').innerHTML = envName;
 });
+
+angular.module('app', ['ngMaterial'])
+
+    .controller('TestController', function($scope) {
+        $scope.test = "Test this";
+    });
